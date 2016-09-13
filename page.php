@@ -32,13 +32,17 @@ get_header();
 </section>
 <?php endif; ?>
 
-<?php if(the_content()): ?>
+<?php if($content = $post->post_content):?>
 <section class="page-content">
 	<div class="content-contain">
 		<?php the_content(); ?>
 	</div>
 </section>
+<?php else: ?>
+	<section class="page-content" style="display:none;">
+	</section>
 <?php endif; ?>
+
 
 <?php if (get_field('image_section')): ?>
 <section class="image-section">
